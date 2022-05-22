@@ -10,8 +10,18 @@
 10. Minimum number of jumps to reach the end of array.
 11. Find duplicates in an array of N+1 integers.
 12. Merge 2 sorted arrays without using extra space.
-13. Kadane's Algorithm
+13. Kadane s Algorithm
 14. Merge Intervals
 15. Next Permutation
 16. Count Inversion
 17. Best Time to Buy and Sell Stock
+18. Find all Pairs on Integer Array whose Sum is Equal to Given Number
+19. Find common elements in 3 sorted arrays
+20. Rearrange the array in alternating positive and negative items
+21. Find if there is a subarray with sum 0
+22. Find factorial of a large number
+23. Find Maximum Product subarray
+24. Longes Consecutive Subsequence
+25. Elements that appear more than n/k times
+26. Maximum profit by buying and selling a share atmost twice
+27. Find whether an array is subset of another array or not
