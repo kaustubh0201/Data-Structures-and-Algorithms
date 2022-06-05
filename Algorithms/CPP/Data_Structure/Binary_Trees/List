@@ -1,4 +1,18 @@
-1. Level order traversal. (also called Breadth First Traversal)
-2. Reverse Level Order Traversal.
-3. Find the height of the binary tree.
-4. Find the diameter of the binary tree.
+01. Level order traversal. (also called Breadth First Traversal)
+02. Reverse Level Order Traversal.
+03. Find the height of the binary tree.
+04. Find the diameter of the binary tree.
+05. Mirror of the Tree
+06. Inorder Traversal of the Binary Tree
+07. Postorder Traversal of the Binary Tree
+08. Preorder Traversal of the Binary Tree
+09. Left View of the Binary Tree
+10. Right View of the Binary Tree
+11. Top View of the Tree
+12. Bottom View of the Tree
+13. Zig-Zag Traversal of the Tree
+14. Check if a tree is balanced or not
+15. Diagonal Traversal of a Binary Tree
+16. Boundary Traversal of a Binary Tree
+17. Construct Binary Tree from String of Bracket Representation
+18. Convert Binary Tree into Doubly Linked List

@@ -76,9 +76,7 @@ int height(Node* root)
 
 Node* newNode(int data)
 {
-  Node* temp = new Node(data);
-
-  return temp;
+  return new Node(data);
 }
 
 
@@ -107,16 +105,128 @@ void levelOrderTraversal_queue(Node* root)
   }
 }
 
+Node* buildBinaryTree(Node* root){
+
+  int data;
+
+  if(!root){
+    cout << "Enter the root node: " << endl;
+    cin >> data;
+    root = new Node(data);
+  }
+
+  cout << "Enter the data for the left node of  " << root->data << endl;
+  cin >> data;
+
+  if(data == -1){
+    root->left = NULL;
+  }else{
+    root->left = new Node(data);
+    buildBinaryTree(root->left);
+  }
+
+  cout << "Enter the data for the right node of " << root->data << endl;
+  cin >> data;
+
+  if(data == -1){
+    root->right = NULL;
+  }else{
+    root->right = new Node(data);
+    buildBinaryTree(root->right);
+  }
+
+  return root;
+}
+
+void inorderTraversal(Node* root){
+
+  if(!root)
+    return;
+
+  inorderTraversal(root->left);
+  cout << root->data << " ";
+  inorderTraversal(root->right);
+}
+
+
+void preorderTraversal(Node* root){
+
+  if(!root)
+    return;
+
+  cout << root->data << endl;
+
+  preorderTraversal(root->left);
+  preorderTraversal(root->right);
+}
+
+void postorderTraversal(Node* root){
+  
+  if(!root)
+    return;
+
+  postorderTraversal(root->left);
+  postorderTraversal(root->right);
+
+  cout << root->data << endl;
+
+}
+
+void levelOrderTraversal_queue_levelwise(Node* root){
+
+  if(!root)
+    return;
+
+  queue<Node*> q;
+  q.push(root);
+  q.push(NULL);
+
+  while(!q.empty()){
+    Node* front = q.front();
+    q.pop();
+
+    if(!front){
+      cout << endl;
+
+      if(!q.empty()){
+        q.push(NULL);
+      }
+
+    }else{
+      cout << front->data << " ";
+
+      if(front->left)
+      q.push(front->left);
+    
+      if(front->right)
+        q.push(front->right);
+    }    
+  }
+}
 
 int main(void)
 {
-  Node* root = newNode(1);
-  root->left = newNode(2);
-  root->right = newNode(3);
-  root->left->left = newNode(4);
-  root->left->right = newNode(5);
+  Node* root = NULL;
 
-  levelOrderTraversal_queue(root);
+  root = buildBinaryTree(root);
+  cout << endl;
+  // 1 5 13 -1 -1 14 -1 -1 7 17 -1 -1 -1  
+
+  // root->left = newNode(2);
+  // root->right = newNode(3);
+  // root->left->left = newNode(4);
+  // root->left->right = newNode(5);
+
+  levelOrderTraversal_queue_levelwise(root);
+  cout << endl;
+
+  inorderTraversal(root);
+  cout << endl;
+
+  preorderTraversal(root);
+  cout << endl;
+
+  postorderTraversal(root);
   cout << endl;
 
   return 0;

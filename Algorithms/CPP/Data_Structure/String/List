@@ -1,6 +1,31 @@
-1. Reverse a string.
-2. Check whether string is palindrome or not.
-3. Find duplicate characters in a string.
-4. Check if one string is rotation of another.
-5. Check if a string is a valid shuffle of two other strings.
-
+01. Reverse a string.
+02. Check whether string is palindrome or not.
+03. Find duplicate characters in a string.
+04. Check if one string is rotation of another.
+05. Check if a string is a valid shuffle of two other string
+06. Count and Say Problem
+07. Longest Palindrome in a String
+08. Longest Recurring Subsequence
+09. Print all Subsequences of a String
+10. Print all the permutations of a String
+11. Split the binary string into substrings with equal number of 0s and 1s
+12.
+13.
+14.
+15.
+16.
+17. Robin Karp Algorithm
+18. KMP Algorithm
+19. Convert a sentence into its equivalent mobile numeric keypad sequence
+20. Minimum number of bracket reversals needed to make an expression balanced
+21. Count all Palindromic Subsequence in a string
+22. Count of number of given string in 2D character array
+23. Search a Word in a 2D Grid of characters
+24. Boyer Moore Algorithm
+25. Roman Numeral to Integer
+26. Longest Common Prefix
+27. Minimum Number of Flips
+28. Second Most Repeated String in a Sequence
+29. Minimum Swap for Bracket Balancing
+30. Longest Common Subsequence
+31. Generate IP Address
