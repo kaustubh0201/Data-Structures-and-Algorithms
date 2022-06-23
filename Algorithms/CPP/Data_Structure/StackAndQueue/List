@@ -19,3 +19,12 @@
 19. Expression contains redundant brackets or not
 20. Implement Stack using Queue
 21. Implement Stack using Deque
+22. Stack Permutations (Check if an array is stack permutation of other)
+23. Implement Queue using Stack  
+24. 
+25. Implement a Circular Queue
+26.
+27. Reverse Queue using Recursion
+28. Reverse the first “K” elements of a queue
+29. Interleave the first half of the queue with second half
+30. Find the first circular tour that visits all Petrol Pumps
