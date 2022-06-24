@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<algorithm>
 
 using namespace std;
 
@@ -41,27 +40,30 @@ void inorderUtil(Node* root, vector<int> &v){
     inorderUtil(root->right, v);
 }
 
-void binaryToBSTUtil(Node* root, vector<int> v, int &i){
-    if(!root)
-        return;
+Node* makeBalance(vector<int> v, int s, int e){
 
-    binaryToBSTUtil(root->left, v, i);
+    if(s <= e){
+        int mid = (s + e) / 2;
 
-    root->data = v[i++];
+        Node* root = new Node(v[mid]);
+        root->left = makeBalance(v, 0, mid - 1);
+        root->right = makeBalance(v, mid + 1, e);
 
-    binaryToBSTUtil(root->right, v, i);    
+        return root;
+    }
+
+    return NULL;
 }
 
-Node* binaryToBST(Node* root){
+Node* BSTtoBalanced(Node* root){
     vector<int> inorderVal;
+
     inorderUtil(root, inorderVal);
+    int n = inorderVal.size();
 
-    sort(inorderVal.begin(), inorderVal.end());
+    Node* r = makeBalance(inorderVal, 0, n - 1);
 
-    int i = 0;
-    binaryToBSTUtil(root, inorderVal, i);
-
-    return root;
+    return r;
 }
 
 void inorder(Node* root){
@@ -77,18 +79,20 @@ void inorder(Node* root){
 
 int main(void){
 
-    Node* root = new Node(5);
-    root->left = new Node(1);
-    root->right = new Node(2);
-    root->left->left = new Node(3);
-    root->left->right = new Node(8);
-    root->right = new Node(9);
+    Node* root = NULL;
+
+    root = insertInBST(root, 50);
+    root = insertInBST(root, 40);
+    root = insertInBST(root, 36);
+    root = insertInBST(root, 32);
+    root = insertInBST(root, 27);
+    root = insertInBST(root, 18);
 
 
     inorder(root);
     cout << endl;
 
-    root = binaryToBST(root);
+    Node* r = BSTtoBalanced(root);
 
     inorder(root);
     cout << endl;
