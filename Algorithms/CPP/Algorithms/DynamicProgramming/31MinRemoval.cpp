@@ -1,9 +1,12 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<climits>
 
 using namespace std;
 
+// space complexity - O(n^2)
+// time complexity - O(n^2)
 int minRemovalUtil(vector<int> &arr, int left, int right, int k, vector<vector<int>> &dp){
 
     if(left >= right)
@@ -31,6 +34,29 @@ int minRemoval(vector<int> &a, int k){
 
     return minRemovalUtil(a, 0, n - 1, k, dp);
 
+}
+
+// space optimized - O(1)
+// time complexity - O(n)
+int minRemovalLinear(vector<int> &a, int k){
+
+    int n = a.size();
+
+    sort(a.begin(), a.end());
+
+    int i = 0;
+    int max_len = INT_MIN;
+
+    for(int j = i + 1; j < n and i < n; j++){
+
+        if(a[i] - a[j] <= k){
+            max_len = max(max_len, j - i + 1);
+        }else{
+            i++;
+        }
+    }
+
+    return (n - max_len);
 }
 
 int main(void){
